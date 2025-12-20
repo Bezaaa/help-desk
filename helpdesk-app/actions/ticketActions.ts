@@ -96,7 +96,7 @@ export async function updateTicketStatus(
       return { error: "Access Denied: Only administrators can update ticket status." };
     }
 
-    // 3. Update the Database
+   
     await db.ticket.update({
       where: { 
         id: id 
@@ -106,7 +106,6 @@ export async function updateTicketStatus(
       },
     });
 
-    // 4. Revalidate the cache so the UI updates immediately
     revalidatePath("/dashboard");
     revalidatePath("/dashboard/tickets");
 

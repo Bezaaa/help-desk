@@ -64,7 +64,7 @@ export function EditTicketModal({ ticket, open, setOpen }: any) {
                 </FormItem>
              )} />
 
-             <Button type="submit" disabled={isPending} className="w-full bg-indigo-600">
+             <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 cursor-pointer">
                {isPending ? <Loader2 className="animate-spin" /> : "Save Changes"}
              </Button>
           </form>

@@ -37,7 +37,7 @@ export function VerificationButton({ userId }: VerificationButtonProps) {
       variant="outline"
       onClick={handleVerify}
       disabled={isPending}
-      className="h-8 border-indigo-500/20 bg-indigo-500/10 text-indigo-400 transition-all hover:bg-indigo-600 hover:text-white group"
+      className="h-8 border-indigo-500/20 bg-indigo-500/10 text-indigo-400 transition-all hover:bg-indigo-600 hover:text-white group cursor-pointer"
     >
       {isPending ? (
         <Loader2 className="mr-2 h-3.5 w-3.5 animate-spin" />
@@ -45,7 +45,7 @@ export function VerificationButton({ userId }: VerificationButtonProps) {
         <UserCheck className="mr-2 h-3.5 w-3.5 group-hover:scale-110 transition-transform" />
       )}
       <span className="text-[10px] font-black uppercase tracking-widest">
-        {isPending ? "Syncing..." : "Approve Operator"}
+        {isPending ? "Syncing..." : "Approve User"}
       </span>
     </Button>
   );

@@ -70,7 +70,7 @@ export function NotificationCenter({ notifications }: { notifications: any[] }) 
                       <button 
                         onClick={() => startTransition(() => markAsRead(n.id))}
                         disabled={isPending}
-                        className="text-[9px] text-indigo-400 font-bold hover:text-indigo-300 uppercase tracking-tighter"
+                        className="text-[9px] text-indigo-400 font-bold hover:text-indigo-300 uppercase tracking-tighter cursor-pointer"
                       >
                         {isPending ? "Clearing..." : "Mark as read"}
                       </button>

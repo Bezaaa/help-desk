@@ -84,7 +84,7 @@ export function CreateTicketModal() {
                 <FormMessage />
               </FormItem>
             )} />
-            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 mt-2 py-6 text-lg font-bold">
+            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 mt-2 py-6 text-lg font-bold cursor-pointer">
               {isPending ? <Loader2 className="animate-spin h-5 w-5" /> : "Submit Ticket"}
             </Button>
           </form>

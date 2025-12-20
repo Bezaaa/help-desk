@@ -79,7 +79,7 @@ export const RegisterForm = () => {
                 <FormMessage />
               </FormItem>
             )} />
-            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6">
+            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 cursor-pointer">
               {isPending ? <Loader2 className="h-5 w-5 animate-spin" /> : "Sign Up"}
             </Button>
           </form>
@@ -87,7 +87,7 @@ export const RegisterForm = () => {
       </CardContent>
       <CardFooter className="justify-center border-t border-zinc-800 pt-6">
         <p className="text-sm text-zinc-500">
-          Already have an account? <Link href="/login" className="text-indigo-400 hover:underline">Log in</Link>
+          Already have an account? <Link href="/login" className="text-indigo-400 hover:underline cursor-pointer">Log in</Link>
         </p>
       </CardFooter>
     </Card>

@@ -17,20 +17,20 @@ export function Sidebar({ userRole }: { userRole: string }) {
 
   return (
     <div className="w-64 bg-black border-r border-zinc-800 h-screen fixed left-0 top-0 flex flex-col z-50">
-      {/* 1. BRANDING - Fixed at top */}
+  
       <div className="flex items-center gap-3 px-6 mb-8 mt-6">
-        <div className="w-8 h-8 bg-indigo-600 rounded-lg flex items-center justify-center font-black text-white">H</div>
+      
         <span className="font-black text-xl tracking-tighter text-white uppercase">Helpdesk<span className="text-indigo-500">.</span></span>
       </div>
 
-      {/* 2. NAVIGATION - Scrollable middle */}
+     
       <nav className="flex-1 px-4 space-y-1 overflow-y-auto scrollbar-hide">
         {links.map(link => {
           if (link.adminOnly && userRole !== "ADMIN") return null;
           const active = pathname === link.href;
           return (
             <Link key={link.href} href={link.href} className={cn(
-              "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group",
+              "flex items-center gap-3 px-3 py-3 rounded-xl transition-all duration-200 group cursor-pointer",
               active ? "bg-indigo-600 text-white shadow-lg shadow-indigo-600/20" : "text-zinc-500 hover:bg-zinc-900 hover:text-zinc-200"
             )}>
               <link.icon className={cn("w-5 h-5", active ? "text-white" : "text-zinc-500 group-hover:text-indigo-400")} />

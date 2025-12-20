@@ -10,7 +10,7 @@ export default async function DashboardLayout({ children }: { children: React.Re
       <Sidebar userRole={session?.user?.role || "USER"} />
       
       <div className="flex-1 ml-64 flex flex-col min-w-0">
-        {/* TOP NAV GOES HERE */}
+     
         <TopNav user={session?.user} />
         
         <main className="flex-1 overflow-y-auto p-0">

@@ -57,16 +57,24 @@ export const LoginForm = () => {
             <FormField control={form.control} name="password" render={({ field }) => (
               <FormItem>
                 <FormLabel className="text-zinc-300">Password</FormLabel>
+                     
+
                 <div className="relative group">
                   <Lock className="absolute left-3 top-3 h-4 w-4 text-zinc-500 group-focus-within:text-indigo-500 transition-colors" />
                   <FormControl>
                     <Input {...field} type="password" placeholder="••••••••" disabled={isPending} className="pl-10 bg-zinc-950 border-zinc-800 text-white focus:ring-1 focus:ring-indigo-500" />
                   </FormControl>
                 </div>
+                   <Link 
+          href="/reset-password" 
+          className="text-[10px] font-black uppercase tracking-widest text-indigo-500 hover:text-indigo-400 transition-colors flex justify-end cursor-pointer"
+        >
+          Forgot Password?
+        </Link>
                 <FormMessage />
               </FormItem>
             )} />
-            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6">
+            <Button type="submit" disabled={isPending} className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-6 cursor-pointer">
               {isPending ? <Loader2 className="h-5 w-5 animate-spin" /> : "Login"}
             </Button>
           </form>
@@ -74,7 +82,7 @@ export const LoginForm = () => {
       </CardContent>
       <CardFooter className="justify-center border-t border-zinc-800 pt-6">
         <p className="text-sm text-zinc-500">
-          New here? <Link href="/register" className="text-indigo-400 hover:underline">Create an account</Link>
+          New here? <Link href="/register" className="text-indigo-400 hover:underline cursor-pointer">Create an account</Link>
         </p>
       </CardFooter>
     </Card>

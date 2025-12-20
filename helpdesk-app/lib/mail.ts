@@ -1,12 +1,14 @@
 import { Resend } from "resend";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
+const domain = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
 export const sendVerificationEmail = async (email: string, token: string) => {
-  const confirmLink = `http://localhost:3000/verify-email?token=${token}`;
+  const confirmLink = `${domain}/verify-email?token=${token}`;
+
 
   await resend.emails.send({
-    from: "onboarding@resend.dev", // Resend gives you this for testing
+    from: "onboarding@resend.dev",
     to: email,
     subject: "Confirm your HelpDesk account",
     html: `<p>Click <a href="${confirmLink}">here</a> to verify your email.</p>`
@@ -32,5 +34,23 @@ export const sendVerifiedNotificationEmail = async (email: string, name: string)
         <p style="margin-top: 40px; font-size: 12px; color: #71717a;">System: Operations Hub // Identity Verified</p>
       </div>
     `
+  });
+};
+
+
+export const sendPasswordResetEmail = async (email: string, token: string) => {
+  const resetLink = `${domain}/new-password?token=${token}`;
+
+  await resend.emails.send({
+    from: "onboarding@resend.dev",
+    to: email,
+    subject: "Reset your Password",
+    html: `
+      <div style="font-family: sans-serif; padding: 20px; color: #333;">
+        <h2>Password Reset Request</h2>
+        <p>Click the link below to reset your password. This link will expire in 1 hour.</p>
+        <a href="${resetLink}" style="background: #6366f1; color: white; padding: 10px 20px; text-decoration: none; border-radius: 5px; display: inline-block;">Reset Password</a>
+      </div>
+    `,
   });
 };

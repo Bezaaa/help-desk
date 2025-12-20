@@ -59,7 +59,7 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
         <div className="absolute inset-0 bg-zinc-950/40 backdrop-blur-[2px] z-10 flex items-center justify-center rounded-b-3xl">
           <div className="flex flex-col items-center gap-2">
             <Loader2 className="animate-spin text-indigo-500 h-8 w-8" />
-            <p className="text-[10px] font-mono text-indigo-400 uppercase tracking-tighter">Updating DB...</p>
+            <p className="text-[10px] font-mono text-indigo-400 uppercase tracking-tighter">Updating ...</p>
           </div>
         </div>
       )}
@@ -92,12 +92,11 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
                 </div>
               </TableCell>
 
-              {/* PRIORITY */}
               <TableCell>
                 <PriorityBadge priority={ticket.priority} />
               </TableCell>
 
-              {/* STATUS (Dropdown for Admin, Badge for User) */}
+           
               <TableCell>
                 {userRole === "ADMIN" ? (
                   <Select
@@ -119,7 +118,7 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
                 )}
               </TableCell>
 
-              {/* OPERATOR (Admin Only) */}
+            
               {userRole === "ADMIN" && (
                 <TableCell>
                   <div className="flex items-center gap-2">
@@ -131,12 +130,11 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
                 </TableCell>
               )}
 
-              {/* TIMESTAMP */}
               <TableCell className="text-right text-zinc-600 font-mono text-[10px] tracking-tighter">
                 {formatDistanceToNow(new Date(ticket.createdAt))} ago
               </TableCell>
 
-              {/* CRUD ACTIONS (Edit/Delete) */}
+            
               <TableCell className="text-right pr-6">
                 <TicketActionMenu ticket={ticket} />
               </TableCell>

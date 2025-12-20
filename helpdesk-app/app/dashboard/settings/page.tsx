@@ -23,7 +23,7 @@ export default async function SettingsPage() {
             <label className="text-xs font-bold text-zinc-500 uppercase">Email Address</label>
             <Input disabled value={session?.user?.email || ""} className="bg-zinc-950 border-zinc-800 text-zinc-500 cursor-not-allowed" />
           </div>
-          <Button className="bg-indigo-600 hover:bg-indigo-700 w-full md:w-auto">Update Profile</Button>
+          <Button className="bg-indigo-600 hover:bg-indigo-700 w-full md:w-auto cursor-pointer">Update Profile</Button>
         </CardContent>
       </Card>
     </div>

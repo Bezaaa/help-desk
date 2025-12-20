@@ -92,7 +92,7 @@ export default async function DashboardPage({
             <div className="flex items-center gap-2 mb-1">
               <div className="h-2 w-2 rounded-full bg-indigo-500 animate-pulse" />
               <span className="text-[10px] font-black text-zinc-500 uppercase tracking-[0.3em]">
-                System Online // Role: {userRole}
+                System Online 
               </span>
             </div>
             <h1 className="text-4xl font-black text-white tracking-tighter uppercase leading-none">
@@ -175,7 +175,7 @@ export default async function DashboardPage({
               <Link
                 href={`/dashboard?page=${currentPage - 1}&q=${query}&priority=${priorityFilter}`}
                 className={cn(
-                  "flex items-center gap-1 px-5 py-2.5 bg-zinc-800 border border-zinc-700 text-zinc-200 rounded-xl text-[10px] font-black uppercase transition-all hover:bg-indigo-600 hover:border-indigo-500",
+                  "flex items-center gap-1 px-5 py-2.5 bg-zinc-800 border border-zinc-700 text-zinc-200 rounded-xl text-[10px] font-black uppercase transition-all hover:bg-indigo-600 hover:border-indigo-500 cursor-pointer",
                   currentPage <= 1 && "pointer-events-none opacity-20"
                 )}
               >
@@ -184,7 +184,7 @@ export default async function DashboardPage({
               <Link
                 href={`/dashboard?page=${currentPage + 1}&q=${query}&priority=${priorityFilter}`}
                 className={cn(
-                  "flex items-center gap-1 px-5 py-2.5 bg-zinc-800 border border-zinc-700 text-zinc-200 rounded-xl text-[10px] font-black uppercase transition-all hover:bg-indigo-600 hover:border-indigo-500",
+                  "flex items-center gap-1 px-5 py-2.5 bg-zinc-800 border border-zinc-700 text-zinc-200 rounded-xl text-[10px] font-black uppercase transition-all hover:bg-indigo-600 hover:border-indigo-500 cursor-pointer",
                   currentPage >= totalPages && "pointer-events-none opacity-20"
                 )}
               >

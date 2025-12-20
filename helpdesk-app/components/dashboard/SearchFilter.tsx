@@ -78,7 +78,7 @@ export function SearchFilters() {
         {hasFilters && (
           <button 
             onClick={clearFilters}
-            className="text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:text-rose-500 flex items-center gap-1 transition-colors"
+            className="text-[10px] font-black uppercase tracking-widest text-zinc-500 hover:text-rose-500 flex items-center gap-1 transition-colors cursor-pointer"
           >
             <X className="h-3 w-3" /> Reset
           </button>

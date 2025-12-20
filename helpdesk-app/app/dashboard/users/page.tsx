@@ -77,7 +77,7 @@ export default async function UsersPage() {
                   )}
                 </TableCell>
                 <TableCell className="text-right pr-8">
-                  {/* ONLY SHOW BUTTON IF NOT VERIFIED AND NOT THEMSELVES */}
+                 
                   {!user.isVerified && user.id !== session?.user?.id && (
                     <VerificationButton userId={user.id} />
                   )}

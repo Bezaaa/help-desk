@@ -5,6 +5,7 @@ import { RegisterInput, registerSchema } from "@/lib/schema";
 import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcryptjs";
 import { signOut } from "@/lib/auth";
+import crypto from "crypto";
 
 
 export async function logout() {
@@ -32,7 +33,7 @@ export async function registerUser(data: RegisterInput) {
     const hashedPassword = await bcrypt.hash(password, 10);
 
    
-    const verificationToken = Math.random().toString(36).substring(2, 15);
+    const verificationToken = crypto.randomBytes(32).toString("hex");
 
    
     await db.user.create({

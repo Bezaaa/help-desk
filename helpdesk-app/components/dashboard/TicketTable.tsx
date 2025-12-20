@@ -47,7 +47,7 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
   if (tickets.length === 0) {
     return (
       <div className="p-20 text-center text-zinc-500 font-mono text-sm uppercase tracking-widest bg-zinc-900/20 rounded-b-3xl">
-        No records found in database.
+        No records found .
       </div>
     );
   }
@@ -71,7 +71,7 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
             <TableHead className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.2em]">Priority</TableHead>
             <TableHead className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.2em]">Status</TableHead>
             {userRole === "ADMIN" && (
-              <TableHead className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.2em]">Operator</TableHead>
+              <TableHead className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.2em]">Reported By</TableHead>
             )}
             <TableHead className="text-zinc-500 font-black uppercase text-[10px] tracking-[0.2em] text-right">Timestamp</TableHead>
             <TableHead className="w-[60px]"></TableHead>

@@ -49,7 +49,7 @@ import Link from "next/link";
         <div className="mx-auto bg-indigo-500/10 w-12 h-12 rounded-xl flex items-center justify-center mb-4 border border-indigo-500/20">
           <ShieldCheck className="text-indigo-500 h-6 w-6" />
         </div>
-        <CardTitle className="text-2xl font-black text-white uppercase tracking-tighter">Update Cipher</CardTitle>
+        <CardTitle className="text-2xl font-black text-white uppercase tracking-tighter">Update Password</CardTitle>
         <CardDescription className="text-zinc-500 font-mono text-[10px] uppercase tracking-widest">
           Secure your operator account
         </CardDescription>

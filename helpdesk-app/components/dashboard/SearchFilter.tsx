@@ -50,7 +50,7 @@ export function SearchFilters() {
       <div className="relative flex-1 w-full group">
         <Search className="absolute left-3 top-3 h-4 w-4 text-zinc-500 group-focus-within:text-indigo-500 transition-colors" />
         <Input
-          placeholder="Filter by subject or description..."
+          placeholder="Search by subject or description..."
           defaultValue={searchParams.get("q") || ""}
           onChange={(e) => updateFilters("q", e.target.value)}
           className="pl-10 bg-zinc-950 border-zinc-800 text-white focus:ring-1 focus:ring-indigo-500/50"

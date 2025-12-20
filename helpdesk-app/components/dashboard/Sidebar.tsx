@@ -44,7 +44,7 @@ export function Sidebar({ userRole }: { userRole: string }) {
       <div className="p-4 border-t border-zinc-800 bg-black">
         <button 
           onClick={() => logout()}
-          className="flex w-full items-center gap-3 px-3 py-3 text-zinc-500 hover:text-rose-400 transition-all duration-200 rounded-xl hover:bg-rose-500/10 group"
+          className="flex w-full items-center gap-3 px-3 py-3 text-zinc-500 hover:text-rose-400 transition-all duration-200 rounded-xl hover:bg-rose-500/10 group cursor-pointer"
         >
           <LogOut className="w-4 h-4 group-hover:rotate-12 transition-transform" />
           <span className="text-sm font-bold tracking-tight uppercase">Terminate Session</span>

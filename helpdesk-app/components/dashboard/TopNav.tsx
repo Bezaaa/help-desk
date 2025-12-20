@@ -22,9 +22,9 @@ export async function TopNav({ user }: { user: any }) {
     
      
 
-      <div className="flex items-center gap-6">
+      <div className="flex items-center gap-6 ">
        
-        <NotificationCenter notifications={notifications} />
+       
 
      
         <div className="flex items-center gap-3 pl-6 border-l border-zinc-800">
@@ -39,6 +39,8 @@ export async function TopNav({ user }: { user: any }) {
           </div>
         </div>
       </div>
+
+       <NotificationCenter notifications={notifications} />
     </header>
   );
 }

@@ -23,7 +23,7 @@ export function NotificationCenter({ notifications }: { notifications: any[] }) 
           <Button 
             variant="ghost" 
             size="icon" 
-            className="relative h-10 w-10 rounded-full border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800"
+            className="relative h-10 w-10 rounded-full border border-zinc-800 bg-zinc-900/50 hover:bg-zinc-800 cursor-pointer"
           >
             <Bell className={cn(
               "h-5 w-5",

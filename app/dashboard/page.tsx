@@ -169,7 +169,7 @@ export default async function DashboardPage({
           {/* PAGINATION FOOTER */}
           <div className="p-6 border-t border-zinc-800/50 bg-zinc-900/20 flex items-center justify-between">
             <p className="text-[10px] font-mono text-zinc-500 uppercase tracking-widest">
-              Showing Page {currentPage} of {totalPages || 1}{skip}-{skip + tickets.length}
+              Showing Page {currentPage} of {totalPages || 1}
             </p>
             <div className="flex gap-2">
               <Link

@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
 import { db } from "@/lib/db";
@@ -16,7 +17,7 @@ export async function verifyUser(userId: string) {
    
     await db.user.update({
       where: { id: userId },
-      data: { isVerified: true },
+      data: { isVerified: true } as any
     });
 
    
@@ -25,7 +26,7 @@ export async function verifyUser(userId: string) {
         userId: userId,
         message: "SYSTEM ALERT: Your operator credentials have been verified.",
         type: "SUCCESS",
-      }
+      } as any
     });
 
    

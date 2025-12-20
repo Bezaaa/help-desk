@@ -33,6 +33,7 @@ export default async function DashboardPage({
 }) {
  
   const resolvedParams = await searchParams;
+  
   const currentPage = Number(resolvedParams.page) || 1;
   const query = resolvedParams.q || "";
   const priorityFilter = resolvedParams.priority || "";

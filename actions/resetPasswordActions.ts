@@ -1,8 +1,10 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 import { db } from "@/lib/db";
 import bcrypt from "bcryptjs";
 
 export async function resetPassword(token: string, newPassword: string) {
+  
   const user = await db.user.findFirst({
     where: { 
         resetToken: token,
@@ -20,7 +22,7 @@ export async function resetPassword(token: string, newPassword: string) {
       password: hashedPassword,
       resetToken: null,
       resetTokenExpiry: null,
-    },
+    } as any
   });
 
   return { success: true };

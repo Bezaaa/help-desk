@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { db } from "@/lib/db";
 import { redirect } from "next/navigation";
 
@@ -21,7 +22,7 @@ export default async function VerifyEmailPage({
     data: { 
       isVerified: true,
       verificationToken: null, 
-    },
+    }as any
   });
 
 

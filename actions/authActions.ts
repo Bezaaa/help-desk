@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 "use server";
 
 import { db } from "@/lib/db";
@@ -6,6 +7,8 @@ import { v4 as uuidv4 } from "uuid";
 import bcrypt from "bcryptjs";
 import { signOut } from "@/lib/auth";
 import crypto from "crypto";
+
+
 
 
 export async function logout() {
@@ -44,8 +47,8 @@ export async function registerUser(data: RegisterInput) {
         role: "USER",
         verificationToken,
         isVerified: false, 
-      },
-    });
+      } 
+    })
 
  
    
@@ -78,13 +81,15 @@ export async function requestPasswordReset(email: string) {
 
 
     const resetToken = uuidv4();
+   
     const resetTokenExpiry = new Date(Date.now() + 3600000); 
+   
 
     
     await db.user.update({
       where: { email },
-      data: { resetToken, resetTokenExpiry },
-    });
+      data: { resetToken, resetTokenExpiry }as any
+    }) 
 
    
     console.log("---------------------------------------");
@@ -100,10 +105,11 @@ export async function requestPasswordReset(email: string) {
   }
 }
 export async function updatePassword(token: string, password: string) {
+
   const user = await db.user.findFirst({
     where: { 
       resetToken: token,
-      resetTokenExpiry: { gt: new Date() } 
+      resetTokenExpiry: { gt: new Date()} 
     },
   });
 
@@ -117,7 +123,7 @@ export async function updatePassword(token: string, password: string) {
       password: hashedPassword,
       resetToken: null,
       resetTokenExpiry: null 
-    },
+    } as any
   });
 
   return { success: true };

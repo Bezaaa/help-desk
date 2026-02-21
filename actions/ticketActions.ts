@@ -108,7 +108,7 @@ export async function updateTicketStatus(
     });
 
     revalidatePath("/dashboard");
-    revalidatePath("/dashboard/tickets");
+    // revalidatePath("/dashboard/tickets");
 
     return { success: true };
   } catch (error) {

@@ -1,6 +1,4 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
-
-# dependencies
+# --- DEPENDENCIES ---
 /node_modules
 /.pnp
 .pnp.*
@@ -10,36 +8,47 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
-
-# next.js
+# --- NEXT.JS & VERCEL ---
 /.next/
 /out/
-
-# production
 /build
+.vercel
 
-# misc
+# --- DATABASE & INFRASTRUCTURE (CRITICAL) ---
+# Ignore the local PostgreSQL storage folder we created in docker-compose
+# If you don't ignore this, you will push GBs of binary data to GitHub
+postgres_data/
+
+# If you have any local Nginx or Redis logs
+*.log
+docker-compose.override.yml
+
+# --- ENVIRONMENT VARIABLES (SECURITY) ---
+# We ignore all local env files to prevent leaking secrets
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+# DO NOT ignore .env.example if you create one later (it's safe)
+
+# --- PRISMA ---
+# Generated client should be built on the server/container, not committed
+/lib/generated/prisma
+node_modules/.prisma
+
+# --- TYPESCRIPT ---
+*.tsbuildinfo
+next-env.d.ts
+
+# --- TESTING ---
+/coverage
+
+# --- MISC / OS METADATA ---
 .DS_Store
+Thumbs.db
 *.pem
-
-# debug
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 .pnpm-debug.log*
-
-# env files (can opt-in for committing if needed)
-.env*
-
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
-
-/lib/generated/prisma
-
-.vercel

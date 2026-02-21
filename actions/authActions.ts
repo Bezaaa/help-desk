@@ -50,9 +50,6 @@ export async function registerUser(data: RegisterInput) {
       } 
     })
 
- 
-   
-
     return { 
       success: true, 
       message: "Registration successful! Please check your email to verify your account." 
@@ -86,10 +83,10 @@ export async function requestPasswordReset(email: string) {
    
 
     
-    await db.user.update({
-      where: { email },
-      data: { resetToken, resetTokenExpiry }as any
-    }) 
+      await db.user.update({
+        where: { email },
+        data: { resetToken, resetTokenExpiry }as any
+      }) 
 
    
     console.log("---------------------------------------");

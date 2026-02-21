@@ -14,8 +14,7 @@ export function VerificationButton({ userId }: VerificationButtonProps) {
   const [isPending, startTransition] = useTransition();
 
   const handleVerify = () => {
-    // startTransition allows us to handle the async server action
-    // and show a loading state without a manual "loading" state variable
+   
     startTransition(async () => {
       const result = await verifyUser(userId);
 

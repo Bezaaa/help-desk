@@ -23,6 +23,7 @@ import {
 } from "@/components/ui/select";
 import { Loader2 } from "lucide-react";
 import { TicketActionMenu } from "./TicketActionMenu";
+import { useBroadcast } from "@/hooks/useBroadcast";
 
 
 interface TicketTableProps {
@@ -32,14 +33,18 @@ interface TicketTableProps {
 
 export function TicketTable({ tickets, userRole }: TicketTableProps) {
   const [isPending, startTransition] = useTransition();
+  const { sendMessage } = useBroadcast("ticket_updates");
 
   const onStatusChange = (id: string, status: any) => {
     startTransition(async () => {
       const res = await updateTicketStatus(id, status);
       if (res.success) {
+        console.log("📤 Action Success. Sending broadcast signal...");
         toast.success("Status updated");
+         sendMessage({ type: "TICKET_MUTATED", id });
       } else {
         toast.error(res.error);
+         console.error("❌ Action failed:", res.error);
       }
     });
   };
@@ -79,7 +84,7 @@ export function TicketTable({ tickets, userRole }: TicketTableProps) {
         </TableHeader>
         <TableBody>
           {tickets.map((ticket) => (
-            <TableRow key={ticket.id} className="border-zinc-800/50 hover:bg-zinc-800/20 transition-all group">
+            <TableRow key={`${ticket.id}-${ticket.status}`}  className="border-zinc-800/50 hover:bg-zinc-800/20 transition-all group">
               {/* SUBJECT & DESCRIPTION */}
               <TableCell className="py-5 pl-6">
                 <div className="flex flex-col">

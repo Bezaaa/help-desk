@@ -1,0 +1,10 @@
+﻿// Color palette
+export const COLOR_WHITE = '#FFFFFF'
+export const COLOR_BLACK = '#000000'
+export const COLOR_GRAY_100 = '#F5F5F5'
+export const COLOR_GRAY_200 = '#EEEEEE'
+export const COLOR_GRAY_300 = '#DDDDDD'
+export const COLOR_SUCCESS = '#28A745'
+export const COLOR_WARNING = '#FFC107'
+export const COLOR_ERROR = '#DC3545'
+export const COLOR_INFO = '#17A2B8'
